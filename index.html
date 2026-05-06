@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YadaRank — Board Game Ranking</title>
+  <meta name="description" content="YadaRank is a simplified ranking system designed for offline board game communities using the Glicko-2 rating system." />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #fff;
+      color: #1a1a1a;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    header .logo-text {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1a1a1a;
+      letter-spacing: -0.3px;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px;
+      text-align: center;
+    }
+
+    .app-icon {
+      width: 100px;
+      height: 100px;
+      border-radius: 24px;
+      background: #6b5ce7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 32px;
+      box-shadow: 0 8px 32px rgba(107, 92, 231, 0.25);
+    }
+
+    .app-icon svg {
+      width: 52px;
+      height: 52px;
+    }
+
+    h1 {
+      font-size: 42px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+      color: #1a1a1a;
+    }
+
+    .tagline {
+      font-size: 17px;
+      color: #555;
+      line-height: 1.7;
+      max-width: 480px;
+      margin-bottom: 48px;
+    }
+
+    .badges {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 64px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 24px;
+      border-radius: 14px;
+      background: #1a1a1a;
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+
+    .badge:hover { opacity: 0.8; }
+
+    .badge.disabled {
+      background: #e8e8e8;
+      color: #999;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    .badge-label { font-size: 10px; opacity: 0.7; display: block; }
+    .badge-store { font-size: 15px; font-weight: 700; display: block; }
+
+    .features {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 600px;
+    }
+
+    .feature {
+      background: #f7f7f7;
+      border-radius: 16px;
+      padding: 24px;
+      flex: 1;
+      min-width: 160px;
+      max-width: 180px;
+      text-align: center;
+    }
+
+    .feature .icon { font-size: 28px; margin-bottom: 10px; }
+    .feature .title { font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+    .feature .desc { font-size: 12px; color: #777; line-height: 1.5; }
+
+    footer {
+      padding: 24px 32px;
+      text-align: center;
+      font-size: 12px;
+      color: #aaa;
+      border-top: 1px solid #f0f0f0;
+    }
+
+    footer a {
+      color: #888;
+      text-decoration: none;
+    }
+
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="app-icon" style="width:36px;height:36px;border-radius:10px;margin:0;box-shadow:none;">
+      <svg viewBox="0 0 52 52" fill="none" style="width:20px;height:20px;">
+        <rect x="6" y="26" width="8" height="20" rx="2" fill="white"/>
+        <rect x="22" y="16" width="8" height="30" rx="2" fill="white"/>
+        <rect x="38" y="6" width="8" height="40" rx="2" fill="white"/>
+      </svg>
+    </div>
+    <span class="logo-text">YadaRank</span>
+  </header>
+
+  <main>
+    <div class="app-icon">
+      <svg viewBox="0 0 52 52" fill="none">
+        <rect x="6" y="26" width="8" height="20" rx="2" fill="white"/>
+        <rect x="22" y="16" width="8" height="30" rx="2" fill="white"/>
+        <rect x="38" y="6" width="8" height="40" rx="2" fill="white"/>
+      </svg>
+    </div>
+
+    <h1>YadaRank</h1>
+    <p class="tagline">
+      A simplified ranking system designed for offline board game communities.
+      We use the Glicko-2 rating system to calculate player rankings.
+    </p>
+
+    <div class="badges">
+      <a href="#" class="badge disabled">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+        </svg>
+        <div>
+          <span class="badge-label">Coming soon on</span>
+          <span class="badge-store">App Store</span>
+        </div>
+      </a>
+      <a href="#" class="badge disabled">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M3.18 23.76c.3.17.64.22.99.14l12.47-7.19-2.52-2.52-10.94 9.57zm-1.71-20.3C1.17 3.83 1 4.22 1 4.69v14.62c0 .47.17.86.47 1.13l.06.05 8.19-8.19v-.19L1.53 3.92l-.06.05zm18.52 7.89-2.63-1.51-2.83 2.83 2.83 2.83 2.66-1.53c.76-.44.76-1.15-.03-1.62zm-17.9 10.46 10.94-9.57-2.52-2.52L1.47 19.3l.62.51z"/>
+        </svg>
+        <div>
+          <span class="badge-label">Coming soon on</span>
+          <span class="badge-store">Google Play</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="features">
+      <div class="feature">
+        <div class="icon">🎲</div>
+        <div class="title">Board Game Friendly</div>
+        <div class="desc">Built for offline communities who play together regularly</div>
+      </div>
+      <div class="feature">
+        <div class="icon">📊</div>
+        <div class="title">Glicko-2 Rating</div>
+        <div class="desc">Fair and accurate rankings using the Glicko-2 algorithm</div>
+      </div>
+      <div class="feature">
+        <div class="icon">👥</div>
+        <div class="title">Group Rooms</div>
+        <div class="desc">Create private rooms and invite your friends to track results</div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 YadaRank · <a href="/privacy.html">Privacy Policy</a></p>
+  </footer>
+</body>
+</html>
