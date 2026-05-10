@@ -80,7 +80,7 @@ export default function Home() {
         <h1 style={styles.h1}>YadaRank</h1>
         <p style={styles.tagline}>
           A simplified ranking system designed for offline board game communities.
-          We use the Glicko-2 rating system to calculate player rankings.
+          We use the TrueSkill rating system to calculate player rankings.
         </p>
 
         <div style={styles.badges}>
