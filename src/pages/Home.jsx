@@ -64,7 +64,7 @@ const PlayIcon = () => (
 
 const features = [
   { icon: '🎲', title: 'Board Game Friendly', desc: 'Built for offline communities who play together regularly' },
-  { icon: '📊', title: 'Glicko-2 Rating', desc: 'Fair and accurate rankings using the Glicko-2 algorithm' },
+  { icon: '📊', title: 'TureSkil Rating', desc: 'Fair and accurate rankings using the TureSkil algorithm' },
   { icon: '👥', title: 'Group Rooms', desc: 'Create private rooms and invite your friends to track results' },
 ]
 

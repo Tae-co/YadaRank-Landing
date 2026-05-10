@@ -71,7 +71,7 @@ export default function DeleteAccount() {
           <strong>"Account Deletion Request"</strong> and include the email address associated with your account.
         </p>
         <a
-          href="mailto:styup1004@gmail.com?subject=Account Deletion Request"
+          href="mailto:taecodev66@gmail.com?subject=Account Deletion Request"
           style={styles.emailBtn}
         >
           Email us to delete account

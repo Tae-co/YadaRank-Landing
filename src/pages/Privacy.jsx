@@ -17,7 +17,7 @@ export default function Privacy() {
       <Header />
       <main style={styles.main}>
         <h1 style={styles.h1}>Privacy Policy</h1>
-        <p style={styles.updated}>Last updated: May 2025</p>
+        <p style={styles.updated}>Last updated: May 2026</p>
 
         <p style={styles.p}>YadaRank ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.</p>
 
@@ -65,7 +65,7 @@ export default function Privacy() {
         <h2 style={styles.h2}>8. Contact Us</h2>
         <p style={styles.p}>
           If you have any questions about this Privacy Policy, please contact us at:<br />
-          <a href="mailto:styup1004@gmail.com">styup1004@gmail.com</a>
+          <a href="mailto:taecodev66@gmail.com">taecodev66@gmail.com</a>
         </p>
       </main>
       <Footer />

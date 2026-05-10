@@ -15,7 +15,7 @@ export default function Footer() {
   return (
     <footer style={styles.footer}>
       <p>
-        © 2025 YadaRank ·{' '}
+        © 2026 YadaRank ·{' '}
         <Link to="/privacy" style={styles.link}>Privacy Policy</Link>
         {' · '}
         <Link to="/delete" style={styles.link}>Delete Account</Link>
