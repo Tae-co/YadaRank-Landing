@@ -84,13 +84,13 @@ export default function Home() {
         </p>
 
         <div style={styles.badges}>
-          <span style={styles.badge}>
+          <a href="https://apps.apple.com/kr/app/yadarank/id6768907330" target="_blank" rel="noopener noreferrer" style={{ ...styles.badge, textDecoration: 'none' }}>
             <AppleIcon />
             <div>
-              <span style={styles.badgeLabel}>Coming soon on</span>
+              <span style={styles.badgeLabel}>Download on the</span>
               <span style={styles.badgeStore}>App Store</span>
             </div>
-          </span>
+          </a>
           <span style={styles.badge}>
             <PlayIcon />
             <div>
