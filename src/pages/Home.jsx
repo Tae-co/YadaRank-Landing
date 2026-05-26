@@ -84,7 +84,7 @@ export default function Home() {
         </p>
 
         <div style={styles.badges}>
-          <a href="https://apps.apple.com/kr/app/yadarank/id6768907330" target="_blank" rel="noopener noreferrer" style={{ ...styles.badge, textDecoration: 'none' }}>
+          <a href="https://apps.apple.com/kr/app/yadarank/id6768907330" target="_blank" rel="noopener noreferrer" style={{ ...styles.badge, textDecoration: 'none', pointerEvents: 'auto', cursor: 'pointer', background: '#1a1a1a', color: '#fff' }}>
             <AppleIcon />
             <div>
               <span style={styles.badgeLabel}>Download on the</span>
