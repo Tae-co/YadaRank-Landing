@@ -40,6 +40,7 @@ const styles = {
     fontWeight: '600',
     cursor: 'default',
     pointerEvents: 'none',
+    minWidth: '160px',
   },
   badgeLabel: { fontSize: '10px', opacity: '0.7', display: 'block' },
   badgeStore: { fontSize: '15px', fontWeight: '700', display: 'block' },
@@ -59,6 +60,12 @@ const AppleIcon = () => (
 const PlayIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
     <path d="M3.18 23.76c.3.17.64.22.99.14l12.47-7.19-2.52-2.52-10.94 9.57zm-1.71-20.3C1.17 3.83 1 4.22 1 4.69v14.62c0 .47.17.86.47 1.13l.06.05 8.19-8.19v-.19L1.53 3.92l-.06.05zm18.52 7.89-2.63-1.51-2.83 2.83 2.83 2.83 2.66-1.53c.76-.44.76-1.15-.03-1.62zm-17.9 10.46 10.94-9.57-2.52-2.52L1.47 19.3l.62.51z"/>
+  </svg>
+)
+
+const WebIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
   </svg>
 )
 
@@ -98,6 +105,13 @@ export default function Home() {
               <span style={styles.badgeStore}>Google Play</span>
             </div>
           </span>
+          <a href="https://app.yadarank.com/login" target="_blank" rel="noopener noreferrer" style={{ ...styles.badge, textDecoration: 'none', pointerEvents: 'auto', cursor: 'pointer', background: '#6B5CE7', color: '#fff' }}>
+            <WebIcon />
+            <div>
+              <span style={styles.badgeLabel}>Open in Browser</span>
+              <span style={styles.badgeStore}>Web App</span>
+            </div>
+          </a>
         </div>
 
         <div style={styles.features}>
