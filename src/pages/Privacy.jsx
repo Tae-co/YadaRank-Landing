@@ -31,7 +31,7 @@ export default function Privacy() {
         <p style={styles.p}>We also collect the following data generated through app usage:</p>
         <ul style={styles.ul}>
           <li style={styles.li}>Game match results and placement records</li>
-          <li style={styles.li}>Glicko-2 rating scores and ranking history</li>
+          <li style={styles.li}>TrueSkill rating scores and ranking history</li>
           <li style={styles.li}>Room membership information</li>
         </ul>
 
