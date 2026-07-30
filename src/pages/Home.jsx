@@ -58,8 +58,11 @@ const AppleIcon = () => (
 )
 
 const PlayIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M3.18 23.76c.3.17.64.22.99.14l12.47-7.19-2.52-2.52-10.94 9.57zm-1.71-20.3C1.17 3.83 1 4.22 1 4.69v14.62c0 .47.17.86.47 1.13l.06.05 8.19-8.19v-.19L1.53 3.92l-.06.05zm18.52 7.89-2.63-1.51-2.83 2.83 2.83 2.83 2.66-1.53c.76-.44.76-1.15-.03-1.62zm-17.9 10.46 10.94-9.57-2.52-2.52L1.47 19.3l.62.51z"/>
+  <svg width="20" height="20" viewBox="0 0 24 24">
+    <path fill="#00A0FF" d="M1.4 1.4C1.15 1.66 1 2.06 1 2.58v18.84c0 .52.15.92.4 1.18l.05.05 10.53-10.53v-.24L1.45 1.35l-.05.05z"/>
+    <path fill="#FFCE00" d="M15.5 15.63l-3.52-3.52v-.24l3.52-3.52.08.05 4.16 2.37c1.19.67 1.19 1.78 0 2.46l-4.16 2.36-.08.04z"/>
+    <path fill="#FF3A44" d="M15.58 15.59l-3.6-3.6L1.4 22.6c.39.42 1.04.47 1.77.05l12.41-7.06z"/>
+    <path fill="#00E676" d="M15.58 8.41L3.17 1.35C2.44.93 1.79.98 1.4 1.4l10.58 10.59 3.6-3.58z"/>
   </svg>
 )
 
@@ -98,13 +101,13 @@ export default function Home() {
               <span style={styles.badgeStore}>App Store</span>
             </div>
           </a>
-          <span style={styles.badge}>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeSbQlifE-y1inrhfLrfWl8llMCU0gL4aBsAFlDgjwhefg24g/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" style={{ ...styles.badge, textDecoration: 'none', pointerEvents: 'auto', cursor: 'pointer', background: '#1a1a1a', color: '#fff' }}>
             <PlayIcon />
             <div>
-              <span style={styles.badgeLabel}>Coming soon on</span>
+              <span style={styles.badgeLabel}>Join the beta test</span>
               <span style={styles.badgeStore}>Google Play</span>
             </div>
-          </span>
+          </a>
           <a href="https://app.yadarank.com/login" target="_blank" rel="noopener noreferrer" style={{ ...styles.badge, textDecoration: 'none', pointerEvents: 'auto', cursor: 'pointer', background: '#6B5CE7', color: '#fff' }}>
             <WebIcon />
             <div>
