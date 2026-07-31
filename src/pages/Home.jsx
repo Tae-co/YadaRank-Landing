@@ -10,7 +10,7 @@ const styles = {
   inner: { maxWidth: '1040px', margin: '0 auto' },
 
   hero: {
-    padding: '88px 24px 96px',
+    padding: '88px 24px 40px',
     textAlign: 'center',
     background: 'radial-gradient(ellipse 80% 60% at 50% 0%, #f3f1ff 0%, #fff 70%)',
   },
@@ -52,7 +52,7 @@ const styles = {
     color: '#555',
     lineHeight: '1.7',
     maxWidth: '560px',
-    margin: '0 auto 40px',
+    margin: '0 auto',
   },
   badges: { display: 'flex', gap: '14px', flexWrap: 'wrap', justifyContent: 'center' },
   badge: {
@@ -185,13 +185,13 @@ const problems = [
 const games = [
   'Catan', 'Cascadia', 'Azul', '7 Wonders', 'Splendor', 'Splendor Duel',
   'Rummikub', 'Uno', 'Dixit', 'Stella', 'Takenoko', 'Little Towns',
-  'Saboteur', 'Radlands', 'Dice Throne', 'Unmatched', 'Duel for Middle-earth', 'Skewered Master',
+  'Saboteur', 'Radlands', 'Dice Throne', 'Unmatched', 'Duel for Middle-earth',
 ]
 
 const steps = [
-  { title: 'Create a room for your group', desc: 'Start a room, share the invite link, and everyone joins in a few seconds. Each group keeps its own separate standings.' },
-  { title: 'Fill in the score sheet', desc: 'Pick the game you just played and enter the numbers from the table. The sheet knows how that game scores, so the totals add themselves up.' },
-  { title: 'Watch the ranking move', desc: 'Every saved match updates the ranking. Open it after game night to see who climbed and who slipped.' },
+  { title: 'Start a community', desc: 'A community is your circle — the club, the meetup, the friends who show up every week. Share the invite link and everyone lands in the same place.' },
+  { title: 'Add a group for each game', desc: 'Inside the community you create a group for a game. Catan gets a group, Cascadia gets a group. Each one carries its own score sheet and its own standings.' },
+  { title: 'Start the game and fill in the sheet', desc: 'Open the group, hit start, and the score sheet for that game appears. Enter the numbers from the table, save, and the ranking moves.' },
 ]
 
 const faqs = [
@@ -201,7 +201,7 @@ const faqs = [
   },
   {
     q: 'Which board games have a score sheet?',
-    a: 'Eighteen games have a dedicated score sheet, including Catan, Cascadia, Azul, 7 Wonders, Splendor, Rummikub, Uno, Dixit, Takenoko, Saboteur, Dice Throne, and Unmatched. Each sheet follows that game’s own scoring categories rather than a single generic scoreboard, and new games get added as groups ask for them.',
+    a: 'Seventeen games have a dedicated score sheet, including Catan, Cascadia, Azul, 7 Wonders, Splendor, Rummikub, Uno, Dixit, Takenoko, Saboteur, Dice Throne, and Unmatched. Each sheet follows that game’s own scoring categories rather than a single generic scoreboard. If the game you play is not on the list, a community admin can build a score sheet for it, and new games get added as groups ask for them.',
   },
   {
     q: 'How is the player ranking calculated?',
@@ -212,8 +212,8 @@ const faqs = [
     a: 'A win count rewards whoever shows up the most, and it treats a four-player win the same as a two-player one. A rating system weighs who you played against and where you finished, so a player with fewer games can still rank above someone who has played all year.',
   },
   {
-    q: 'Can I track more than one group?',
-    a: 'Yes. Scores are stored per room, so your Tuesday night group and your family holiday games stay in separate standings. There is also an overall ranking across the whole app if you want to see where you land more broadly.',
+    q: 'What is the difference between a community and a group?',
+    a: 'A community is the circle of people — your club, your meetup, your regular table — and it holds the invite link everyone joins through. A group sits inside a community and covers one board game. You can run as many groups as you play games, and each keeps its own score sheet and its own ranking. There is also an overall ranking across the whole app if you want to see where you land more broadly.',
   },
   {
     q: 'Does this work for in-person games?',
@@ -278,21 +278,21 @@ const RankingMock = () => (
 
 const GroupMock = () => (
   <div style={styles.mock}>
-    <div style={styles.mockTitle}>YOUR ROOMS</div>
+    <div style={styles.mockTitle}>TUESDAY NIGHT CLUB · GROUPS</div>
     {[
-      { icon: '🎲', name: 'Tuesday Night Crew', meta: '6 players · 48 matches' },
-      { icon: '🏠', name: 'Family Holidays', meta: '5 players · 12 matches' },
-      { icon: '☕', name: 'Office Lunch Games', meta: '9 players · 63 matches' },
-    ].map((room) => (
-      <div key={room.name} style={{ ...styles.mockRow, alignItems: 'flex-start', borderBottom: '1px solid #f6f6f6' }}>
+      { icon: '🎲', name: 'Catan', meta: '6 players · 48 matches' },
+      { icon: '🧩', name: 'Azul', meta: '5 players · 12 matches' },
+      { icon: '🌲', name: 'Cascadia', meta: '9 players · 63 matches' },
+    ].map((group) => (
+      <div key={group.name} style={{ ...styles.mockRow, alignItems: 'flex-start', borderBottom: '1px solid #f6f6f6' }}>
         <span style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           <span style={{
             width: '34px', height: '34px', borderRadius: '10px', background: '#f3f1ff',
             display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: '16px',
-          }}>{room.icon}</span>
+          }}>{group.icon}</span>
           <span>
-            <span style={{ display: 'block', fontWeight: '600' }}>{room.name}</span>
-            <span style={{ display: 'block', fontSize: '12px', color: '#999' }}>{room.meta}</span>
+            <span style={{ display: 'block', fontWeight: '600' }}>{group.name}</span>
+            <span style={{ display: 'block', fontSize: '12px', color: '#999' }}>{group.meta}</span>
           </span>
         </span>
       </div>
@@ -315,9 +315,9 @@ const featureRows = [
     reversed: true,
   },
   {
-    tag: 'GROUPS AND ROOMS',
-    title: 'One room for your whole play group',
-    body: 'Create a room, share the invite link, and every result lands in the same place. Scores stay inside the group, so your regular game night keeps its own standings separate from every other table you play at. Run as many rooms as you have groups.',
+    tag: 'COMMUNITIES AND GROUPS',
+    title: 'Your club on top, a group for every game',
+    body: 'Start a community for your board game club, your meetup, or the friends who show up every week, then share the invite link. Inside it you add a group for each game you play. Every group carries its own score sheet and its own standings, so the Catan table and the Azul table keep separate records instead of blurring into one leaderboard.',
     visual: <GroupMock />,
   },
 ]
@@ -351,32 +351,6 @@ export default function Home() {
             Keep score with a sheet built for the game you are playing, save every match,
             and see skill-based rankings for your play group. Runs in any browser, nothing to install.
           </p>
-          <div style={styles.badges}>
-            <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer"
-               className="hover-lift" style={{ ...styles.badge, background: '#1a1a1a', color: '#fff' }}>
-              <AppleIcon />
-              <div>
-                <span style={styles.badgeLabel}>Download on the</span>
-                <span style={styles.badgeStore}>App Store</span>
-              </div>
-            </a>
-            <a href={BETA_FORM_URL} target="_blank" rel="noopener noreferrer"
-               className="hover-lift" style={{ ...styles.badge, background: '#1a1a1a', color: '#fff' }}>
-              <PlayIcon />
-              <div>
-                <span style={styles.badgeLabel}>Join the beta test</span>
-                <span style={styles.badgeStore}>Google Play</span>
-              </div>
-            </a>
-            <a href={WEB_APP_URL} target="_blank" rel="noopener noreferrer"
-               className="hover-lift" style={{ ...styles.badge, background: PURPLE, color: '#fff' }}>
-              <WebIcon />
-              <div>
-                <span style={styles.badgeLabel}>Open in Browser</span>
-                <span style={styles.badgeStore}>Web App</span>
-              </div>
-            </a>
-          </div>
         </section>
 
         {/* 문제 제기 */}
@@ -500,6 +474,14 @@ export default function Home() {
                   <div>
                     <span style={styles.badgeLabel}>Download on the</span>
                     <span style={styles.badgeStore}>App Store</span>
+                  </div>
+                </a>
+                <a href={BETA_FORM_URL} target="_blank" rel="noopener noreferrer"
+                   className="hover-lift" style={{ ...styles.badge, background: '#1a1a1a', color: '#fff' }}>
+                  <PlayIcon />
+                  <div>
+                    <span style={styles.badgeLabel}>Join the beta test</span>
+                    <span style={styles.badgeStore}>Google Play</span>
                   </div>
                 </a>
               </div>
