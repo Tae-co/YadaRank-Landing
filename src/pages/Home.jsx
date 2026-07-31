@@ -217,8 +217,8 @@ const steps = [
 
 const faqs = [
   {
-    q: 'Is there a web version, or do I have to install an app?',
-    a: 'YadaRank is a web app first. Open the website in any browser on a phone, tablet, or laptop and you can track board game scores online without installing anything, which is usually the fastest way to keep score at the table. If you would rather have it on your home screen, there is an iOS app on the App Store and an Android version in beta testing, and both sign in to the same account as the website.',
+    q: 'How do I get YadaRank?',
+    a: 'The iOS app is on the App Store, and the Android app is in beta testing right now. You can also open YadaRank in a browser on a phone, tablet, or laptop, and everything signs in to the same account either way. The app is the smoother way to use it at the table, since it sits on your home screen and opens straight into your groups.',
   },
   {
     q: 'Which board games have a score sheet?',
@@ -235,10 +235,6 @@ const faqs = [
   {
     q: 'What is the difference between a community and a group?',
     a: 'A community is the circle of people — your club, your meetup, your regular table — and it holds the invite link everyone joins through. A group sits inside a community and covers one board game. You can run as many groups as you play games, and each keeps its own score sheet and its own ranking. There is also an overall ranking across the whole app if you want to see where you land more broadly.',
-  },
-  {
-    q: 'How does this compare to Board Game Stats (BG Stats)?',
-    a: 'BG Stats is a mobile app for logging plays, managing a collection, and reading statistics, and it is thorough at that. Two differences decide it. YadaRank runs in the browser, so nobody in your group installs anything to join a room — they open a link. And YadaRank ranks players with a TrueSkill rating instead of reporting win counts and averages, which is what you want when the question is who is actually best. If you want a personal play log across a whole collection, BG Stats covers more ground. If you want one shared ranking for a group that plays together, that is what YadaRank is built for.',
   },
   {
     q: 'Does this work for in-person games?',
@@ -369,7 +365,7 @@ export default function Home() {
             <img src="/logo.png" width="64" height="64" style={{ objectFit: 'contain' }} alt="YadaRank" />
           </div>
           <div>
-            <span style={styles.eyebrow}>Web · iOS · Android beta</span>
+            <span style={styles.eyebrow}>iOS · Android beta · Web</span>
           </div>
           <h1 style={styles.h1}>Board game score tracker for your group</h1>
           <p style={styles.tagline}>
@@ -491,20 +487,13 @@ export default function Home() {
             <Reveal>
               <h2 style={styles.h2}>Settle it before the next game night</h2>
               <p style={styles.sectionLead}>
-                Open the web app in your browser and start a room. Your group joins from an
-                invite link, with nothing to install.
+                Get the app, start a community, and share the invite link. Your group&rsquo;s
+                results land in one place.
               </p>
+              {/* 앱 우선. 웹은 마지막에 보조 수단으로 둔다. */}
               <div style={styles.badges}>
-                <a href={WEB_APP_URL} target="_blank" rel="noopener noreferrer"
-                   className="hover-lift" style={{ ...styles.badge, background: PURPLE, color: '#fff' }}>
-                  <WebIcon />
-                  <div>
-                    <span style={styles.badgeLabel}>Open in Browser</span>
-                    <span style={styles.badgeStore}>Web App</span>
-                  </div>
-                </a>
                 <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer"
-                   className="hover-lift" style={{ ...styles.badge, background: '#1a1a1a', color: '#fff' }}>
+                   className="hover-lift" style={{ ...styles.badge, background: PURPLE, color: '#fff' }}>
                   <AppleIcon />
                   <div>
                     <span style={styles.badgeLabel}>Download on the</span>
@@ -517,6 +506,14 @@ export default function Home() {
                   <div>
                     <span style={styles.badgeLabel}>Join the beta test</span>
                     <span style={styles.badgeStore}>Google Play</span>
+                  </div>
+                </a>
+                <a href={WEB_APP_URL} target="_blank" rel="noopener noreferrer"
+                   className="hover-lift" style={{ ...styles.badge, background: '#fff', color: '#555', border: '1px solid #e0e0e0' }}>
+                  <WebIcon />
+                  <div>
+                    <span style={styles.badgeLabel}>Or open in</span>
+                    <span style={styles.badgeStore}>Browser</span>
                   </div>
                 </a>
               </div>
