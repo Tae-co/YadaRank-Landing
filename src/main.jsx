@@ -12,6 +12,9 @@ const app = (
   </StrictMode>
 )
 
+// 스크롤 등장 애니메이션은 JS가 있을 때만 켠다 (index.css의 `html.js .reveal` 참고).
+document.documentElement.classList.add('js')
+
 const root = document.getElementById('root')
 
 // 빌드 결과물에는 prerender.mjs가 미리 렌더한 HTML이 들어 있으므로 hydrate한다.

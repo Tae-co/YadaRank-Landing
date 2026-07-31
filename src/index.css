@@ -9,3 +9,47 @@ body {
 
 a { color: #6b5ce7; text-decoration: none; }
 a:hover { text-decoration: underline; }
+
+/* 히어로의 "Download the app"이 하단 #get-app으로 부드럽게 내려가게 한다. */
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+/* 스크롤 등장 애니메이션.
+   기본값은 "보이는 상태"다. main.jsx가 <html>에 .js를 붙인 뒤에만 숨겼다가 보여주므로
+   프리랜더 HTML과 JS 비활성 환경에서는 본문이 항상 노출된다. */
+.reveal { opacity: 1; }
+
+html.js .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html.js .reveal.is-visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html.js .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* 기능 소개 행: 좁은 화면에서는 1열로 쌓이고, 넓어지면 2열이 되면서 좌우가 번갈아 배치된다. */
+.feature-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (min-width: 860px) {
+  .feature-row { grid-template-columns: 1fr 1fr; gap: 64px; }
+  .feature-row.is-reversed .feature-copy { order: 2; }
+}
+
+.hover-lift { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.hover-lift:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(107, 92, 231, 0.14); }
+
+@media (prefers-reduced-motion: reduce) {
+  .hover-lift, .hover-lift:hover { transition: none; transform: none; }
+}
