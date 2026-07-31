@@ -1,54 +1,141 @@
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import Reveal from '../components/Reveal'
+
+const PURPLE = '#6b5ce7'
 
 const styles = {
   body: { minHeight: '100vh', display: 'flex', flexDirection: 'column' },
-  main: {
-    flex: 1,
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: '60px 24px',
+  section: { padding: '96px 24px' },
+  inner: { maxWidth: '1040px', margin: '0 auto' },
+
+  hero: {
+    padding: '88px 24px 96px',
     textAlign: 'center',
+    background: 'radial-gradient(ellipse 80% 60% at 50% 0%, #f3f1ff 0%, #fff 70%)',
   },
   appIcon: {
-    width: '120px',
-    height: '120px',
-    borderRadius: '28px',
-    background: '#f3f1ff',
+    width: '96px',
+    height: '96px',
+    borderRadius: '24px',
+    background: '#fff',
     border: '1px solid #e0d9ff',
-    display: 'flex',
+    display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: '32px',
-    boxShadow: '0 4px 24px rgba(107, 92, 231, 0.12)',
+    marginBottom: '28px',
+    boxShadow: '0 8px 32px rgba(107, 92, 231, 0.16)',
   },
-  h1: { fontSize: '42px', fontWeight: '800', letterSpacing: '-1px', marginBottom: '16px', color: '#1a1a1a' },
-  tagline: { fontSize: '17px', color: '#555', lineHeight: '1.7', maxWidth: '480px', marginBottom: '48px' },
-  badges: { display: 'flex', gap: '16px', flexWrap: 'wrap', justifyContent: 'center', marginBottom: '64px' },
+  eyebrow: {
+    display: 'inline-block',
+    padding: '6px 14px',
+    borderRadius: '999px',
+    background: '#f3f1ff',
+    border: '1px solid #e0d9ff',
+    color: PURPLE,
+    fontSize: '13px',
+    fontWeight: '600',
+    marginBottom: '20px',
+  },
+  h1: {
+    fontSize: 'clamp(34px, 5.5vw, 54px)',
+    fontWeight: '800',
+    letterSpacing: '-1.5px',
+    lineHeight: '1.15',
+    marginBottom: '20px',
+    maxWidth: '760px',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  },
+  tagline: {
+    fontSize: '18px',
+    color: '#555',
+    lineHeight: '1.7',
+    maxWidth: '560px',
+    margin: '0 auto 40px',
+  },
+  badges: { display: 'flex', gap: '14px', flexWrap: 'wrap', justifyContent: 'center' },
   badge: {
     display: 'inline-flex',
     alignItems: 'center',
     gap: '10px',
     padding: '14px 24px',
     borderRadius: '14px',
-    background: '#e8e8e8',
-    color: '#999',
     textDecoration: 'none',
     fontSize: '14px',
     fontWeight: '600',
-    cursor: 'default',
-    pointerEvents: 'none',
-    minWidth: '160px',
+    minWidth: '168px',
   },
   badgeLabel: { fontSize: '10px', opacity: '0.7', display: 'block' },
   badgeStore: { fontSize: '15px', fontWeight: '700', display: 'block' },
-  features: { display: 'flex', gap: '24px', flexWrap: 'wrap', justifyContent: 'center', maxWidth: '600px' },
-  feature: { background: '#f7f7f7', borderRadius: '16px', padding: '24px', flex: '1', minWidth: '160px', maxWidth: '180px', textAlign: 'center' },
-  featureIcon: { fontSize: '28px', marginBottom: '10px' },
-  featureTitle: { fontSize: '13px', fontWeight: '700', marginBottom: '6px' },
-  featureDesc: { fontSize: '12px', color: '#777', lineHeight: '1.5' },
+
+  h2: {
+    fontSize: 'clamp(26px, 3.5vw, 36px)',
+    fontWeight: '800',
+    letterSpacing: '-0.8px',
+    lineHeight: '1.25',
+    textAlign: 'center',
+    marginBottom: '16px',
+  },
+  sectionLead: {
+    fontSize: '16px',
+    color: '#666',
+    textAlign: 'center',
+    maxWidth: '580px',
+    margin: '0 auto 56px',
+  },
+
+  cardGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '20px' },
+  card: { background: '#fafafa', border: '1px solid #f0f0f0', borderRadius: '18px', padding: '28px 24px' },
+  cardIcon: { fontSize: '26px', marginBottom: '14px' },
+  cardTitle: { fontSize: '16px', fontWeight: '700', marginBottom: '8px' },
+  cardDesc: { fontSize: '14px', color: '#777', lineHeight: '1.65' },
+
+  featureTag: { fontSize: '13px', fontWeight: '700', color: PURPLE, marginBottom: '12px', letterSpacing: '0.3px' },
+  h3: { fontSize: 'clamp(22px, 3vw, 30px)', fontWeight: '800', letterSpacing: '-0.6px', lineHeight: '1.3', marginBottom: '16px' },
+  featureBody: { fontSize: '16px', color: '#5a5a5a', lineHeight: '1.75' },
+
+  mock: {
+    background: '#fff',
+    border: '1px solid #ececec',
+    borderRadius: '20px',
+    padding: '22px',
+    boxShadow: '0 16px 48px rgba(26, 26, 26, 0.08)',
+  },
+  mockTitle: { fontSize: '12px', fontWeight: '700', color: '#999', letterSpacing: '0.6px', marginBottom: '16px' },
+  mockRow: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '9px 0', fontSize: '14px' },
+
+  gameGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(158px, 1fr))', gap: '10px' },
+  gameChip: {
+    background: '#fff',
+    border: '1px solid #ececec',
+    borderRadius: '12px',
+    padding: '13px 16px',
+    fontSize: '14px',
+    fontWeight: '600',
+    color: '#333',
+  },
+
+  steps: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '32px' },
+  stepNum: {
+    width: '38px',
+    height: '38px',
+    borderRadius: '11px',
+    background: PURPLE,
+    color: '#fff',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontWeight: '800',
+    fontSize: '16px',
+    marginBottom: '16px',
+  },
+
+  faqItem: { borderBottom: '1px solid #f0f0f0', padding: '24px 0' },
+  faqQ: { fontSize: '17px', fontWeight: '700', marginBottom: '10px' },
+  faqA: { fontSize: '15px', color: '#666', lineHeight: '1.75' },
+
+  cta: { textAlign: 'center', background: '#faf9ff', borderTop: '1px solid #f0edff' },
 }
 
 const AppleIcon = () => (
@@ -72,62 +159,362 @@ const WebIcon = () => (
   </svg>
 )
 
-const features = [
-  { icon: '🎲', title: 'Board Game Friendly', desc: 'Built for offline communities who play together regularly' },
-  { icon: '📊', title: 'TureSkil Rating', desc: 'Fair and accurate rankings using the TureSkil algorithm' },
-  { icon: '👥', title: 'Group Rooms', desc: 'Create private rooms and invite your friends to track results' },
+const APP_STORE_URL = 'https://apps.apple.com/kr/app/yadarank/id6768907330'
+const BETA_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeSbQlifE-y1inrhfLrfWl8llMCU0gL4aBsAFlDgjwhefg24g/viewform?usp=dialog'
+const WEB_APP_URL = 'https://app.yadarank.com/login'
+
+const problems = [
+  {
+    icon: '🧾',
+    title: 'The score pad gets thrown away',
+    desc: 'You add up the last round on the back of the rulebook, then it goes in the recycling with the pizza box.',
+  },
+  {
+    icon: '🤷',
+    title: 'Nobody remembers last month',
+    desc: 'Who actually won Catan three weeks ago? Everyone has a different answer and there is no way to check.',
+  },
+  {
+    icon: '⚔️',
+    title: 'The argument never ends',
+    desc: 'Someone always claims they are the best at Azul. Without a record it stays a claim instead of a fact.',
+  },
+]
+
+// SCORE_SCHEMAS(Board_Game_Front/src/scoreSheets/schemas/index.js)에 등록된 게임과 맞춘다.
+const games = [
+  'Catan', 'Cascadia', 'Azul', '7 Wonders', 'Splendor', 'Splendor Duel',
+  'Rummikub', 'Uno', 'Dixit', 'Stella', 'Takenoko', 'Little Towns',
+  'Saboteur', 'Radlands', 'Dice Throne', 'Unmatched', 'Duel for Middle-earth', 'Skewered Master',
+]
+
+const steps = [
+  { title: 'Create a room for your group', desc: 'Start a room, share the invite link, and everyone joins in a few seconds. Each group keeps its own separate standings.' },
+  { title: 'Fill in the score sheet', desc: 'Pick the game you just played and enter the numbers from the table. The sheet knows how that game scores, so the totals add themselves up.' },
+  { title: 'Watch the ranking move', desc: 'Every saved match updates the ranking. Open it after game night to see who climbed and who slipped.' },
+]
+
+const faqs = [
+  {
+    q: 'Do I need to install anything?',
+    a: 'No. YadaRank runs in any browser on a phone, tablet, or laptop, which is usually the fastest way to keep score at the table. There is also an iOS app on the App Store, and the Android version is currently in beta testing.',
+  },
+  {
+    q: 'Which board games have a score sheet?',
+    a: 'Eighteen games have a dedicated score sheet, including Catan, Cascadia, Azul, 7 Wonders, Splendor, Rummikub, Uno, Dixit, Takenoko, Saboteur, Dice Throne, and Unmatched. Each sheet follows that game’s own scoring categories rather than a single generic scoreboard, and new games get added as groups ask for them.',
+  },
+  {
+    q: 'How is the player ranking calculated?',
+    a: 'YadaRank uses TrueSkill, the Bayesian rating system Microsoft built for Xbox matchmaking. It tracks both an estimate of your skill and how confident it is about that estimate, so results settle quickly and beating a table of strong players counts for more than beating one beginner.',
+  },
+  {
+    q: 'Why not just count wins?',
+    a: 'A win count rewards whoever shows up the most, and it treats a four-player win the same as a two-player one. A rating system weighs who you played against and where you finished, so a player with fewer games can still rank above someone who has played all year.',
+  },
+  {
+    q: 'Can I track more than one group?',
+    a: 'Yes. Scores are stored per room, so your Tuesday night group and your family holiday games stay in separate standings. There is also an overall ranking across the whole app if you want to see where you land more broadly.',
+  },
+  {
+    q: 'Does this work for in-person games?',
+    a: 'That is exactly what it is built for. YadaRank does not play the game for you and does not need the game to be digital. You play on a real table with real components, then record the result afterwards.',
+  },
+]
+
+const ScoreSheetMock = () => (
+  <div style={styles.mock}>
+    <div style={styles.mockTitle}>CASCADIA · SCORE SHEET</div>
+    {[
+      { icon: '🐻', label: 'Bear', a: 9, b: 5 },
+      { icon: '🦌', label: 'Elk', a: 12, b: 14 },
+      { icon: '🐟', label: 'Salmon', a: 8, b: 6 },
+      { icon: '🌲', label: 'Forest', a: 6, b: 9 },
+      { icon: '🍃', label: 'Nature tokens', a: 4, b: 2 },
+    ].map((r) => (
+      <div key={r.label} style={{ ...styles.mockRow, borderBottom: '1px solid #f6f6f6' }}>
+        <span style={{ color: '#555' }}>{r.icon}&nbsp; {r.label}</span>
+        <span style={{ display: 'flex', gap: '22px', fontVariantNumeric: 'tabular-nums', color: '#333' }}>
+          <span style={{ width: '26px', textAlign: 'right' }}>{r.a}</span>
+          <span style={{ width: '26px', textAlign: 'right' }}>{r.b}</span>
+        </span>
+      </div>
+    ))}
+    <div style={{ ...styles.mockRow, marginTop: '8px', fontWeight: '800' }}>
+      <span>Total</span>
+      <span style={{ display: 'flex', gap: '22px', fontVariantNumeric: 'tabular-nums' }}>
+        <span style={{ width: '26px', textAlign: 'right', color: PURPLE }}>39</span>
+        <span style={{ width: '26px', textAlign: 'right' }}>36</span>
+      </span>
+    </div>
+  </div>
+)
+
+const RankingMock = () => (
+  <div style={styles.mock}>
+    <div style={styles.mockTitle}>GROUP RANKING</div>
+    {[
+      { rank: 1, name: 'Jiwon', score: 1284, delta: '+32' },
+      { rank: 2, name: 'Minseo', score: 1170, delta: '+8' },
+      { rank: 3, name: 'Taeyub', score: 1092, delta: '−19' },
+      { rank: 4, name: 'Haeun', score: 964, delta: '−7' },
+    ].map((p) => (
+      <div key={p.name} style={{ ...styles.mockRow, borderBottom: '1px solid #f6f6f6' }}>
+        <span style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <span style={{
+            width: '24px', height: '24px', borderRadius: '8px', fontSize: '12px', fontWeight: '700',
+            display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+            background: p.rank === 1 ? PURPLE : '#f2f2f2', color: p.rank === 1 ? '#fff' : '#888',
+          }}>{p.rank}</span>
+          <span style={{ fontWeight: '600' }}>{p.name}</span>
+        </span>
+        <span style={{ display: 'flex', alignItems: 'center', gap: '12px', fontVariantNumeric: 'tabular-nums' }}>
+          <span style={{ fontSize: '12px', color: p.delta.startsWith('+') ? '#16a34a' : '#dc2626' }}>{p.delta}</span>
+          <span style={{ fontWeight: '700' }}>{p.score}</span>
+        </span>
+      </div>
+    ))}
+  </div>
+)
+
+const GroupMock = () => (
+  <div style={styles.mock}>
+    <div style={styles.mockTitle}>YOUR ROOMS</div>
+    {[
+      { icon: '🎲', name: 'Tuesday Night Crew', meta: '6 players · 48 matches' },
+      { icon: '🏠', name: 'Family Holidays', meta: '5 players · 12 matches' },
+      { icon: '☕', name: 'Office Lunch Games', meta: '9 players · 63 matches' },
+    ].map((room) => (
+      <div key={room.name} style={{ ...styles.mockRow, alignItems: 'flex-start', borderBottom: '1px solid #f6f6f6' }}>
+        <span style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <span style={{
+            width: '34px', height: '34px', borderRadius: '10px', background: '#f3f1ff',
+            display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: '16px',
+          }}>{room.icon}</span>
+          <span>
+            <span style={{ display: 'block', fontWeight: '600' }}>{room.name}</span>
+            <span style={{ display: 'block', fontSize: '12px', color: '#999' }}>{room.meta}</span>
+          </span>
+        </span>
+      </div>
+    ))}
+  </div>
+)
+
+const featureRows = [
+  {
+    tag: 'GAME-SPECIFIC SCORE SHEETS',
+    title: 'A score sheet built for each game',
+    body: 'Every board game counts points differently. Cascadia scores wildlife cards and habitat corridors. Catan scores settlements, cities, and the longest road. Rummikub counts whatever is left in everyone’s rack. Instead of one generic scoreboard, YadaRank gives each game its own score sheet, so you enter the numbers you can actually see on the table and the totals add themselves up.',
+    visual: <ScoreSheetMock />,
+  },
+  {
+    tag: 'SKILL-BASED RANKINGS',
+    title: 'A ranking that measures skill, not attendance',
+    body: 'Counting wins rewards whoever plays the most. YadaRank rates players with TrueSkill, the system Microsoft built for Xbox matchmaking, so finishing first at a table of five strong players moves you more than beating one beginner. Your group gets its own standings, and there is an overall ranking across the whole app.',
+    visual: <RankingMock />,
+    reversed: true,
+  },
+  {
+    tag: 'GROUPS AND ROOMS',
+    title: 'One room for your whole play group',
+    body: 'Create a room, share the invite link, and every result lands in the same place. Scores stay inside the group, so your regular game night keeps its own standings separate from every other table you play at. Run as many rooms as you have groups.',
+    visual: <GroupMock />,
+  },
 ]
 
 export default function Home() {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  }
+
   return (
     <div style={styles.body}>
       <Header />
-      <main style={styles.main}>
-        <div style={styles.appIcon}>
-          <img src="/logo.png" width="80" height="80" style={{ objectFit: 'contain' }} alt="YadaRank" />
-        </div>
 
-        <h1 style={styles.h1}>YadaRank</h1>
-        <p style={styles.tagline}>
-          A simplified ranking system designed for offline board game communities.
-          We use the TrueSkill rating system to calculate player rankings.
-        </p>
+      <main style={{ flex: 1 }}>
+        {/* 히어로 */}
+        <section style={styles.hero}>
+          <div style={styles.appIcon}>
+            <img src="/logo.png" width="64" height="64" style={{ objectFit: 'contain' }} alt="YadaRank" />
+          </div>
+          <div>
+            <span style={styles.eyebrow}>Web · iOS · Android beta</span>
+          </div>
+          <h1 style={styles.h1}>Board game score tracker for your group</h1>
+          <p style={styles.tagline}>
+            Keep score with a sheet built for the game you are playing, save every match,
+            and see skill-based rankings for your play group. Runs in any browser, nothing to install.
+          </p>
+          <div style={styles.badges}>
+            <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer"
+               className="hover-lift" style={{ ...styles.badge, background: '#1a1a1a', color: '#fff' }}>
+              <AppleIcon />
+              <div>
+                <span style={styles.badgeLabel}>Download on the</span>
+                <span style={styles.badgeStore}>App Store</span>
+              </div>
+            </a>
+            <a href={BETA_FORM_URL} target="_blank" rel="noopener noreferrer"
+               className="hover-lift" style={{ ...styles.badge, background: '#1a1a1a', color: '#fff' }}>
+              <PlayIcon />
+              <div>
+                <span style={styles.badgeLabel}>Join the beta test</span>
+                <span style={styles.badgeStore}>Google Play</span>
+              </div>
+            </a>
+            <a href={WEB_APP_URL} target="_blank" rel="noopener noreferrer"
+               className="hover-lift" style={{ ...styles.badge, background: PURPLE, color: '#fff' }}>
+              <WebIcon />
+              <div>
+                <span style={styles.badgeLabel}>Open in Browser</span>
+                <span style={styles.badgeStore}>Web App</span>
+              </div>
+            </a>
+          </div>
+        </section>
 
-        <div style={styles.badges}>
-          <a href="https://apps.apple.com/kr/app/yadarank/id6768907330" target="_blank" rel="noopener noreferrer" style={{ ...styles.badge, textDecoration: 'none', pointerEvents: 'auto', cursor: 'pointer', background: '#1a1a1a', color: '#fff' }}>
-            <AppleIcon />
-            <div>
-              <span style={styles.badgeLabel}>Download on the</span>
-              <span style={styles.badgeStore}>App Store</span>
+        {/* 문제 제기 */}
+        <section style={styles.section}>
+          <div style={styles.inner}>
+            <Reveal>
+              <h2 style={styles.h2}>Paper score pads don&rsquo;t remember who won</h2>
+              <p style={styles.sectionLead}>
+                Most groups keep score on whatever is nearby, then lose it before the next game night.
+              </p>
+            </Reveal>
+            <div style={styles.cardGrid}>
+              {problems.map((p, i) => (
+                <Reveal key={p.title} delay={i * 90}>
+                  <div className="hover-lift" style={styles.card}>
+                    <div style={styles.cardIcon}>{p.icon}</div>
+                    <div style={styles.cardTitle}>{p.title}</div>
+                    <div style={styles.cardDesc}>{p.desc}</div>
+                  </div>
+                </Reveal>
+              ))}
             </div>
-          </a>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeSbQlifE-y1inrhfLrfWl8llMCU0gL4aBsAFlDgjwhefg24g/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" style={{ ...styles.badge, textDecoration: 'none', pointerEvents: 'auto', cursor: 'pointer', background: '#1a1a1a', color: '#fff' }}>
-            <PlayIcon />
-            <div>
-              <span style={styles.badgeLabel}>Join the beta test</span>
-              <span style={styles.badgeStore}>Google Play</span>
-            </div>
-          </a>
-          <a href="https://app.yadarank.com/login" target="_blank" rel="noopener noreferrer" style={{ ...styles.badge, textDecoration: 'none', pointerEvents: 'auto', cursor: 'pointer', background: '#6B5CE7', color: '#fff' }}>
-            <WebIcon />
-            <div>
-              <span style={styles.badgeLabel}>Open in Browser</span>
-              <span style={styles.badgeStore}>Web App</span>
-            </div>
-          </a>
-        </div>
+          </div>
+        </section>
 
-        <div style={styles.features}>
-          {features.map((f) => (
-            <div key={f.title} style={styles.feature}>
-              <div style={styles.featureIcon}>{f.icon}</div>
-              <div style={styles.featureTitle}>{f.title}</div>
-              <div style={styles.featureDesc}>{f.desc}</div>
+        {/* 기능 소개 */}
+        <section style={{ ...styles.section, background: '#fbfbfd', borderTop: '1px solid #f4f4f4', borderBottom: '1px solid #f4f4f4' }}>
+          <div style={{ ...styles.inner, display: 'flex', flexDirection: 'column', gap: '104px' }}>
+            {featureRows.map((f) => (
+              <Reveal key={f.tag}>
+                <div className={f.reversed ? 'feature-row is-reversed' : 'feature-row'}>
+                  <div className="feature-copy">
+                    <div style={styles.featureTag}>{f.tag}</div>
+                    <h3 style={styles.h3}>{f.title}</h3>
+                    <p style={styles.featureBody}>{f.body}</p>
+                  </div>
+                  <div>{f.visual}</div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+
+        {/* 지원 게임 */}
+        <section style={styles.section}>
+          <div style={styles.inner}>
+            <Reveal>
+              <h2 style={styles.h2}>Score sheets ready for {games.length} games</h2>
+              <p style={styles.sectionLead}>
+                Pick the game, fill in the sheet, save the match. More get added as groups ask for them.
+              </p>
+            </Reveal>
+            <div style={styles.gameGrid}>
+              {games.map((g, i) => (
+                <Reveal key={g} delay={Math.min(i, 8) * 45}>
+                  <div className="hover-lift" style={styles.gameChip}>{g}</div>
+                </Reveal>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        </section>
+
+        {/* 사용 방법 */}
+        <section style={{ ...styles.section, background: '#fbfbfd', borderTop: '1px solid #f4f4f4', borderBottom: '1px solid #f4f4f4' }}>
+          <div style={styles.inner}>
+            <Reveal>
+              <h2 style={styles.h2}>How it works</h2>
+              <p style={styles.sectionLead}>Three steps, and none of them happen during the game.</p>
+            </Reveal>
+            <div style={styles.steps}>
+              {steps.map((s, i) => (
+                <Reveal key={s.title} delay={i * 110}>
+                  <div>
+                    <div style={styles.stepNum}>{i + 1}</div>
+                    <div style={{ ...styles.cardTitle, fontSize: '17px' }}>{s.title}</div>
+                    <div style={{ ...styles.cardDesc, fontSize: '15px' }}>{s.desc}</div>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section style={styles.section}>
+          <div style={{ ...styles.inner, maxWidth: '760px' }}>
+            <Reveal>
+              <h2 style={{ ...styles.h2, marginBottom: '48px' }}>Questions groups ask</h2>
+            </Reveal>
+            {faqs.map((f, i) => (
+              <Reveal key={f.q} delay={Math.min(i, 4) * 70}>
+                <div style={styles.faqItem}>
+                  <div style={styles.faqQ}>{f.q}</div>
+                  <div style={styles.faqA}>{f.a}</div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+
+        {/* 마무리 CTA */}
+        <section style={{ ...styles.section, ...styles.cta }}>
+          <div style={styles.inner}>
+            <Reveal>
+              <h2 style={styles.h2}>Settle it before the next game night</h2>
+              <p style={styles.sectionLead}>
+                Open it in the browser and start a room. Your group can join from the invite link.
+              </p>
+              <div style={styles.badges}>
+                <a href={WEB_APP_URL} target="_blank" rel="noopener noreferrer"
+                   className="hover-lift" style={{ ...styles.badge, background: PURPLE, color: '#fff' }}>
+                  <WebIcon />
+                  <div>
+                    <span style={styles.badgeLabel}>Open in Browser</span>
+                    <span style={styles.badgeStore}>Web App</span>
+                  </div>
+                </a>
+                <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer"
+                   className="hover-lift" style={{ ...styles.badge, background: '#1a1a1a', color: '#fff' }}>
+                  <AppleIcon />
+                  <div>
+                    <span style={styles.badgeLabel}>Download on the</span>
+                    <span style={styles.badgeStore}>App Store</span>
+                  </div>
+                </a>
+              </div>
+            </Reveal>
+          </div>
+        </section>
       </main>
+
       <Footer />
+
+      {/* 화면의 FAQ와 같은 배열에서 생성한다 — 둘이 어긋나면 구글이 리치 결과를 뺀다. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
     </div>
   )
 }
