@@ -217,8 +217,8 @@ const steps = [
 
 const faqs = [
   {
-    q: 'Do I need to install anything?',
-    a: 'No. YadaRank runs in any browser on a phone, tablet, or laptop, which is usually the fastest way to keep score at the table. There is also an iOS app on the App Store, and the Android version is currently in beta testing.',
+    q: 'Is there a web version, or do I have to install an app?',
+    a: 'YadaRank is a web app first. Open the website in any browser on a phone, tablet, or laptop and you can track board game scores online without installing anything, which is usually the fastest way to keep score at the table. If you would rather have it on your home screen, there is an iOS app on the App Store and an Android version in beta testing, and both sign in to the same account as the website.',
   },
   {
     q: 'Which board games have a score sheet?',
@@ -235,6 +235,10 @@ const faqs = [
   {
     q: 'What is the difference between a community and a group?',
     a: 'A community is the circle of people — your club, your meetup, your regular table — and it holds the invite link everyone joins through. A group sits inside a community and covers one board game. You can run as many groups as you play games, and each keeps its own score sheet and its own ranking. There is also an overall ranking across the whole app if you want to see where you land more broadly.',
+  },
+  {
+    q: 'How does this compare to Board Game Stats (BG Stats)?',
+    a: 'BG Stats is a mobile app for logging plays, managing a collection, and reading statistics, and it is thorough at that. Two differences decide it. YadaRank runs in the browser, so nobody in your group installs anything to join a room — they open a link. And YadaRank ranks players with a TrueSkill rating instead of reporting win counts and averages, which is what you want when the question is who is actually best. If you want a personal play log across a whole collection, BG Stats covers more ground. If you want one shared ranking for a group that plays together, that is what YadaRank is built for.',
   },
   {
     q: 'Does this work for in-person games?',
@@ -487,7 +491,8 @@ export default function Home() {
             <Reveal>
               <h2 style={styles.h2}>Settle it before the next game night</h2>
               <p style={styles.sectionLead}>
-                Open it in the browser and start a room. Your group can join from the invite link.
+                Open the web app in your browser and start a room. Your group joins from an
+                invite link, with nothing to install.
               </p>
               <div style={styles.badges}>
                 <a href={WEB_APP_URL} target="_blank" rel="noopener noreferrer"
