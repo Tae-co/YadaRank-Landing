@@ -10,6 +10,13 @@ body {
 a { color: #6b5ce7; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
+/* 히어로의 "Download the app"이 하단 #get-app으로 부드럽게 내려가게 한다. */
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
 /* 스크롤 등장 애니메이션.
    기본값은 "보이는 상태"다. main.jsx가 <html>에 .js를 붙인 뒤에만 숨겼다가 보여주므로
    프리랜더 HTML과 JS 비활성 환경에서는 본문이 항상 노출된다. */

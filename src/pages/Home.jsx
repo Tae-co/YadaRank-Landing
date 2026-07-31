@@ -10,7 +10,7 @@ const styles = {
   inner: { maxWidth: '1040px', margin: '0 auto' },
 
   hero: {
-    padding: '88px 24px 40px',
+    padding: '88px 24px 72px',
     textAlign: 'center',
     background: 'radial-gradient(ellipse 80% 60% at 50% 0%, #f3f1ff 0%, #fff 70%)',
   },
@@ -53,6 +53,20 @@ const styles = {
     lineHeight: '1.7',
     maxWidth: '560px',
     margin: '0 auto',
+  },
+  heroCta: {
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: '10px',
+    marginTop: '36px',
+    padding: '15px 30px',
+    borderRadius: '14px',
+    background: PURPLE,
+    color: '#fff',
+    fontSize: '15px',
+    fontWeight: '700',
+    textDecoration: 'none',
+    boxShadow: '0 8px 24px rgba(107, 92, 231, 0.28)',
   },
   badges: { display: 'flex', gap: '14px', flexWrap: 'wrap', justifyContent: 'center' },
   badge: {
@@ -150,6 +164,13 @@ const PlayIcon = () => (
     <path fill="#FFCE00" d="M15.5 15.63l-3.52-3.52v-.24l3.52-3.52.08.05 4.16 2.37c1.19.67 1.19 1.78 0 2.46l-4.16 2.36-.08.04z"/>
     <path fill="#FF3A44" d="M15.58 15.59l-3.6-3.6L1.4 22.6c.39.42 1.04.47 1.77.05l12.41-7.06z"/>
     <path fill="#00E676" d="M15.58 8.41L3.17 1.35C2.44.93 1.79.98 1.4 1.4l10.58 10.59 3.6-3.58z"/>
+  </svg>
+)
+
+const DownIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+       strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M12 5v14M19 12l-7 7-7-7" />
   </svg>
 )
 
@@ -351,6 +372,11 @@ export default function Home() {
             Keep score with a sheet built for the game you are playing, save every match,
             and see skill-based rankings for your play group. Runs in any browser, nothing to install.
           </p>
+          {/* 페이지 맨 아래 다운로드 섹션으로 내려간다. 순수 앵커라 JS 없이도 동작한다. */}
+          <a href="#get-app" className="hover-lift" style={styles.heroCta}>
+            Download the app
+            <DownIcon />
+          </a>
         </section>
 
         {/* 문제 제기 */}
@@ -452,7 +478,7 @@ export default function Home() {
         </section>
 
         {/* 마무리 CTA */}
-        <section style={{ ...styles.section, ...styles.cta }}>
+        <section id="get-app" style={{ ...styles.section, ...styles.cta }}>
           <div style={styles.inner}>
             <Reveal>
               <h2 style={styles.h2}>Settle it before the next game night</h2>
