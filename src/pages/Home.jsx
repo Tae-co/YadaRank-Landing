@@ -10,7 +10,7 @@ const styles = {
   inner: { maxWidth: '1040px', margin: '0 auto' },
 
   hero: {
-    padding: '88px 24px 72px',
+    padding: '80px 24px 56px',
     textAlign: 'center',
     background: 'radial-gradient(ellipse 80% 60% at 50% 0%, #f3f1ff 0%, #fff 70%)',
   },
@@ -370,7 +370,7 @@ export default function Home() {
           <h1 style={styles.h1}>Board game score tracker for your group</h1>
           <p style={styles.tagline}>
             Keep score with a sheet built for the game you are playing, save every match,
-            and see skill-based rankings for your play group. Runs in any browser, nothing to install.
+            and see skill-based rankings for your play group.
           </p>
           {/* 페이지 맨 아래 다운로드 섹션으로 내려간다. 순수 앵커라 JS 없이도 동작한다. */}
           <a href="#get-app" className="hover-lift" style={styles.heroCta}>
@@ -379,15 +379,19 @@ export default function Home() {
           </a>
         </section>
 
-        {/* 문제 제기 */}
-        <section style={styles.section}>
+        {/* 문제 제기 — 첫 화면 하단에 제목이 걸치도록 위쪽 여백을 줄였다.
+            아래에 내용이 더 있다는 걸 스크롤 전에 알리기 위한 것. */}
+        <section style={{ ...styles.section, paddingTop: '48px' }}>
           <div style={styles.inner}>
-            <Reveal>
+            {/* 첫 화면 경계에 걸치는 제목이라 Reveal로 감싸지 않는다.
+                감싸면 짧은 뷰포트(1280x800, 모바일)에서 opacity 0인 채로 걸려
+                "아래에 내용이 있다"는 신호가 사라진다. */}
+            <div>
               <h2 style={styles.h2}>Paper score pads don&rsquo;t remember who won</h2>
               <p style={styles.sectionLead}>
                 Most groups keep score on whatever is nearby, then lose it before the next game night.
               </p>
-            </Reveal>
+            </div>
             <div style={styles.cardGrid}>
               {problems.map((p, i) => (
                 <Reveal key={p.title} delay={i * 90}>
