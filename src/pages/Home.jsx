@@ -226,7 +226,7 @@ const faqs = [
   },
   {
     q: 'How is the player ranking calculated?',
-    a: 'YadaRank uses TrueSkill, the Bayesian rating system Microsoft built for Xbox matchmaking. It tracks both an estimate of your skill and how confident it is about that estimate, so results settle quickly and beating a table of strong players counts for more than beating one beginner.',
+    a: 'YadaRank uses an Elo rating, the system chess has used for decades, adapted for games with more than two players. Every finish is scored as a head-to-head result against each player at the table, weighted by how likely that result was, so an upset against stronger players moves you more than an expected win. Your first ten games in a group move faster so you find your level quickly.',
   },
   {
     q: 'Why not just count wins?',
@@ -331,7 +331,7 @@ const featureRows = [
   {
     tag: 'SKILL-BASED RANKINGS',
     title: 'A ranking that measures skill, not attendance',
-    body: 'Counting wins rewards whoever plays the most. YadaRank rates players with TrueSkill, the system Microsoft built for Xbox matchmaking, so finishing first at a table of five strong players moves you more than beating one beginner. Your group gets its own standings, and there is an overall ranking across the whole app.',
+    body: 'Counting wins rewards whoever plays the most. YadaRank rates players with an Elo rating built for multiplayer games, so finishing first at a table of five strong players moves you more than beating one beginner. Your group gets its own standings, and there is an overall ranking across the whole app.',
     visual: <RankingMock />,
     reversed: true,
   },
