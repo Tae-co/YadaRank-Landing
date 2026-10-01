@@ -181,7 +181,7 @@ const WebIcon = () => (
 )
 
 const APP_STORE_URL = 'https://apps.apple.com/kr/app/yadarank/id6768907330'
-const BETA_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeSbQlifE-y1inrhfLrfWl8llMCU0gL4aBsAFlDgjwhefg24g/viewform?usp=dialog'
+const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.taeco.YadaRank&pcampaignid=web_share'
 const WEB_APP_URL = 'https://app.yadarank.com/login'
 
 const problems = [
@@ -218,7 +218,7 @@ const steps = [
 const faqs = [
   {
     q: 'How do I get YadaRank?',
-    a: 'The iOS app is on the App Store, and the Android app is in beta testing right now. You can also open YadaRank in a browser on a phone, tablet, or laptop, and everything signs in to the same account either way. The app is the smoother way to use it at the table, since it sits on your home screen and opens straight into your groups.',
+    a: 'The app is on the App Store for iOS and on Google Play for Android. You can also open YadaRank in a browser on a phone, tablet, or laptop, and everything signs in to the same account either way. The app is the smoother way to use it at the table, since it sits on your home screen and opens straight into your groups.',
   },
   {
     q: 'Which board games have a score sheet?',
@@ -365,7 +365,7 @@ export default function Home() {
             <img src="/logo.png" width="64" height="64" style={{ objectFit: 'contain' }} alt="YadaRank" />
           </div>
           <div>
-            <span style={styles.eyebrow}>iOS · Android beta · Web</span>
+            <span style={styles.eyebrow}>iOS · Android · Web</span>
           </div>
           <h1 style={styles.h1}>Board game score tracker for your group</h1>
           <p style={styles.tagline}>
@@ -500,11 +500,11 @@ export default function Home() {
                     <span style={styles.badgeStore}>App Store</span>
                   </div>
                 </a>
-                <a href={BETA_FORM_URL} target="_blank" rel="noopener noreferrer"
+                <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer"
                    className="hover-lift" style={{ ...styles.badge, background: '#1a1a1a', color: '#fff' }}>
                   <PlayIcon />
                   <div>
-                    <span style={styles.badgeLabel}>Join the beta test</span>
+                    <span style={styles.badgeLabel}>Get it on</span>
                     <span style={styles.badgeStore}>Google Play</span>
                   </div>
                 </a>
