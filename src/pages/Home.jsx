@@ -186,7 +186,7 @@ const faqs = [
   },
   {
     q: 'How is the player ranking calculated?',
-    a: 'YadaRank uses an Elo rating, the system chess has used for decades, adapted for games with more than two players. Every finish is scored as a head-to-head result against each player at the table, weighted by how likely that result was, so an upset against stronger players moves you more than an expected win. Your first ten games in a group move faster so you find your level quickly.',
+    a: 'YadaRank uses an Elo rating, the system chess has used for decades, adapted for games with more than two players. Every finish is scored as a head-to-head result against each player at the table, weighted by how likely that result was, so an upset against stronger players moves you more than an expected win. Your first three games in a group move faster so you find your level quickly.',
   },
   {
     q: 'Why not just count wins?',
