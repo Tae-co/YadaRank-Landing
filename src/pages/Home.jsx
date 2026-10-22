@@ -10,21 +10,9 @@ const styles = {
   inner: { maxWidth: '1040px', margin: '0 auto' },
 
   hero: {
-    padding: '80px 24px 56px',
-    textAlign: 'center',
+    padding: '64px 24px 72px',
     background: 'radial-gradient(ellipse 80% 60% at 50% 0%, #f3f1ff 0%, #fff 70%)',
-  },
-  appIcon: {
-    width: '96px',
-    height: '96px',
-    borderRadius: '24px',
-    background: '#fff',
-    border: '1px solid #e0d9ff',
-    display: 'inline-flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: '28px',
-    boxShadow: '0 8px 32px rgba(107, 92, 231, 0.16)',
+    overflow: 'hidden',
   },
   eyebrow: {
     display: 'inline-block',
@@ -41,33 +29,17 @@ const styles = {
     fontSize: 'clamp(34px, 5.5vw, 54px)',
     fontWeight: '800',
     letterSpacing: '-1.5px',
-    lineHeight: '1.15',
+    lineHeight: '1.12',
     marginBottom: '20px',
-    maxWidth: '760px',
-    marginLeft: 'auto',
-    marginRight: 'auto',
   },
   tagline: {
     fontSize: '18px',
     color: '#555',
-    lineHeight: '1.7',
-    maxWidth: '560px',
-    margin: '0 auto',
+    lineHeight: '1.6',
+    maxWidth: '480px',
+    marginBottom: '32px',
   },
-  heroCta: {
-    display: 'inline-flex',
-    alignItems: 'center',
-    gap: '10px',
-    marginTop: '36px',
-    padding: '15px 30px',
-    borderRadius: '14px',
-    background: PURPLE,
-    color: '#fff',
-    fontSize: '15px',
-    fontWeight: '700',
-    textDecoration: 'none',
-    boxShadow: '0 8px 24px rgba(107, 92, 231, 0.28)',
-  },
+  webLink: { display: 'inline-block', marginTop: '16px', fontSize: '14px', color: '#777' },
   badges: { display: 'flex', gap: '14px', flexWrap: 'wrap', justifyContent: 'center' },
   badge: {
     display: 'inline-flex',
@@ -109,15 +81,17 @@ const styles = {
   h3: { fontSize: 'clamp(22px, 3vw, 30px)', fontWeight: '800', letterSpacing: '-0.6px', lineHeight: '1.3', marginBottom: '16px' },
   featureBody: { fontSize: '16px', color: '#5a5a5a', lineHeight: '1.75' },
 
-  mock: {
-    background: '#fff',
-    border: '1px solid #ececec',
-    borderRadius: '20px',
-    padding: '22px',
-    boxShadow: '0 16px 48px rgba(26, 26, 26, 0.08)',
+  trust: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(3, 1fr)',
+    gap: '10px',
+    maxWidth: '1040px',
+    margin: '0 auto',
+    padding: '0 24px',
   },
-  mockTitle: { fontSize: '12px', fontWeight: '700', color: '#999', letterSpacing: '0.6px', marginBottom: '16px' },
-  mockRow: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '9px 0', fontSize: '14px' },
+  trustItem: { textAlign: 'center', padding: '18px 8px', borderRadius: '16px', background: '#fafafa', border: '1px solid #f0f0f0' },
+  trustNum: { display: 'block', fontSize: 'clamp(20px, 4vw, 26px)', fontWeight: '800', color: PURPLE, letterSpacing: '-0.5px', lineHeight: '1.2' },
+  trustLabel: { display: 'block', fontSize: '12px', color: '#777', marginTop: '4px', lineHeight: '1.4' },
 
   gameGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(158px, 1fr))', gap: '10px' },
   gameChip: {
@@ -145,9 +119,8 @@ const styles = {
     marginBottom: '16px',
   },
 
-  faqItem: { borderBottom: '1px solid #f0f0f0', padding: '24px 0' },
-  faqQ: { fontSize: '17px', fontWeight: '700', marginBottom: '10px' },
-  faqA: { fontSize: '15px', color: '#666', lineHeight: '1.75' },
+  faqItem: { borderBottom: '1px solid #f0f0f0' },
+  faqA: { fontSize: '15px', color: '#666', lineHeight: '1.75', paddingBottom: '22px' },
 
   cta: { textAlign: 'center', background: '#faf9ff', borderTop: '1px solid #f0edff' },
 }
@@ -167,19 +140,6 @@ const PlayIcon = () => (
   </svg>
 )
 
-const DownIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-       strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <path d="M12 5v14M19 12l-7 7-7-7" />
-  </svg>
-)
-
-const WebIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-  </svg>
-)
-
 const APP_STORE_URL = 'https://apps.apple.com/kr/app/yadarank/id6768907330'
 const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.taeco.YadaRank&pcampaignid=web_share'
 const WEB_APP_URL = 'https://app.yadarank.com/login'
@@ -188,17 +148,17 @@ const problems = [
   {
     icon: '🧾',
     title: 'The score pad gets thrown away',
-    desc: 'You add up the last round on the back of the rulebook, then it goes in the recycling with the pizza box.',
+    desc: 'Added up on the back of the rulebook, then recycled with the pizza box.',
   },
   {
     icon: '🤷',
     title: 'Nobody remembers last month',
-    desc: 'Who actually won Catan three weeks ago? Everyone has a different answer and there is no way to check.',
+    desc: 'Who won Catan three weeks ago? Everyone remembers it differently.',
   },
   {
     icon: '⚔️',
     title: 'The argument never ends',
-    desc: 'Someone always claims they are the best at Azul. Without a record it stays a claim instead of a fact.',
+    desc: 'Someone always says they’re the best at Azul. Without a record, nobody can prove it.',
   },
 ]
 
@@ -210,9 +170,9 @@ const games = [
 ]
 
 const steps = [
-  { title: 'Start a community', desc: 'A community is your circle — the club, the meetup, the friends who show up every week. Share the invite link and everyone lands in the same place.' },
-  { title: 'Add a group for each game', desc: 'Inside the community you create a group for a game. Catan gets a group, Cascadia gets a group. Each one carries its own score sheet and its own standings.' },
-  { title: 'Start the game and fill in the sheet', desc: 'Open the group, hit start, and the score sheet for that game appears. Enter the numbers from the table, save, and the ranking moves.' },
+  { title: 'Start a community', desc: 'Your club, meetup, or regular table. Share one invite link.' },
+  { title: 'Add a group per game', desc: 'Catan gets a group, Dixit gets a group. Each keeps its own standings.' },
+  { title: 'Play, then fill the sheet', desc: 'Enter the numbers from the table, save, and the ranking moves.' },
 ]
 
 const faqs = [
@@ -226,7 +186,7 @@ const faqs = [
   },
   {
     q: 'How is the player ranking calculated?',
-    a: 'YadaRank uses an Elo rating, the system chess has used for decades, adapted for games with more than two players. Every finish is scored as a head-to-head result against each player at the table, weighted by how likely that result was, so an upset against stronger players moves you more than an expected win. Your first ten games in a group move faster so you find your level quickly.',
+    a: 'YadaRank uses an Elo rating, the system chess has used for decades, adapted for games with more than two players. Every finish is scored as a head-to-head result against each player at the table, weighted by how likely that result was, so an upset against stronger players moves you more than an expected win. Your first three games in a group move faster so you find your level quickly.',
   },
   {
     q: 'Why not just count wins?',
@@ -242,104 +202,60 @@ const faqs = [
   },
 ]
 
-const ScoreSheetMock = () => (
-  <div style={styles.mock}>
-    <div style={styles.mockTitle}>CASCADIA · SCORE SHEET</div>
-    {[
-      { icon: '🐻', label: 'Bear', a: 9, b: 5 },
-      { icon: '🦌', label: 'Elk', a: 12, b: 14 },
-      { icon: '🐟', label: 'Salmon', a: 8, b: 6 },
-      { icon: '🌲', label: 'Forest', a: 6, b: 9 },
-      { icon: '🍃', label: 'Nature tokens', a: 4, b: 2 },
-    ].map((r) => (
-      <div key={r.label} style={{ ...styles.mockRow, borderBottom: '1px solid #f6f6f6' }}>
-        <span style={{ color: '#555' }}>{r.icon}&nbsp; {r.label}</span>
-        <span style={{ display: 'flex', gap: '22px', fontVariantNumeric: 'tabular-nums', color: '#333' }}>
-          <span style={{ width: '26px', textAlign: 'right' }}>{r.a}</span>
-          <span style={{ width: '26px', textAlign: 'right' }}>{r.b}</span>
-        </span>
-      </div>
-    ))}
-    <div style={{ ...styles.mockRow, marginTop: '8px', fontWeight: '800' }}>
-      <span>Total</span>
-      <span style={{ display: 'flex', gap: '22px', fontVariantNumeric: 'tabular-nums' }}>
-        <span style={{ width: '26px', textAlign: 'right', color: PURPLE }}>39</span>
-        <span style={{ width: '26px', textAlign: 'right' }}>36</span>
-      </span>
-    </div>
+// 앱 화면 캡처(390x844 @2x)를 폰 모양 프레임에 넣는다. 원본은 로컬 데모 데이터로 찍었다.
+const Phone = ({ src, alt, className, eager }) => (
+  <div className={className ? `phone ${className}` : 'phone'}>
+    <img src={src} alt={alt} width="390" height="844"
+         loading={eager ? 'eager' : 'lazy'} decoding="async" />
   </div>
 )
 
-const RankingMock = () => (
-  <div style={styles.mock}>
-    <div style={styles.mockTitle}>GROUP RANKING</div>
-    {[
-      { rank: 1, name: 'Jiwon', score: 1284, delta: '+32' },
-      { rank: 2, name: 'Minseo', score: 1170, delta: '+8' },
-      { rank: 3, name: 'Taeyub', score: 1092, delta: '−19' },
-      { rank: 4, name: 'Haeun', score: 964, delta: '−7' },
-    ].map((p) => (
-      <div key={p.name} style={{ ...styles.mockRow, borderBottom: '1px solid #f6f6f6' }}>
-        <span style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-          <span style={{
-            width: '24px', height: '24px', borderRadius: '8px', fontSize: '12px', fontWeight: '700',
-            display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-            background: p.rank === 1 ? PURPLE : '#f2f2f2', color: p.rank === 1 ? '#fff' : '#888',
-          }}>{p.rank}</span>
-          <span style={{ fontWeight: '600' }}>{p.name}</span>
-        </span>
-        <span style={{ display: 'flex', alignItems: 'center', gap: '12px', fontVariantNumeric: 'tabular-nums' }}>
-          <span style={{ fontSize: '12px', color: p.delta.startsWith('+') ? '#16a34a' : '#dc2626' }}>{p.delta}</span>
-          <span style={{ fontWeight: '700' }}>{p.score}</span>
-        </span>
+const StoreBadges = () => (
+  <div style={styles.badges}>
+    <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer"
+       className="hover-lift" style={{ ...styles.badge, background: PURPLE, color: '#fff' }}>
+      <AppleIcon />
+      <div>
+        <span style={styles.badgeLabel}>Download on the</span>
+        <span style={styles.badgeStore}>App Store</span>
       </div>
-    ))}
+    </a>
+    <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer"
+       className="hover-lift" style={{ ...styles.badge, background: '#1a1a1a', color: '#fff' }}>
+      <PlayIcon />
+      <div>
+        <span style={styles.badgeLabel}>Get it on</span>
+        <span style={styles.badgeStore}>Google Play</span>
+      </div>
+    </a>
   </div>
 )
 
-const GroupMock = () => (
-  <div style={styles.mock}>
-    <div style={styles.mockTitle}>TUESDAY NIGHT CLUB · GROUPS</div>
-    {[
-      { icon: '🎲', name: 'Catan', meta: '6 players · 48 matches' },
-      { icon: '🧩', name: 'Azul', meta: '5 players · 12 matches' },
-      { icon: '🌲', name: 'Cascadia', meta: '9 players · 63 matches' },
-    ].map((group) => (
-      <div key={group.name} style={{ ...styles.mockRow, alignItems: 'flex-start', borderBottom: '1px solid #f6f6f6' }}>
-        <span style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-          <span style={{
-            width: '34px', height: '34px', borderRadius: '10px', background: '#f3f1ff',
-            display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: '16px',
-          }}>{group.icon}</span>
-          <span>
-            <span style={{ display: 'block', fontWeight: '600' }}>{group.name}</span>
-            <span style={{ display: 'block', fontSize: '12px', color: '#999' }}>{group.meta}</span>
-          </span>
-        </span>
-      </div>
-    ))}
-  </div>
-)
+const trust = [
+  { num: '17', label: 'games with their own score sheet' },
+  { num: 'Elo', label: 'rating built for 3+ players' },
+  { num: '3', label: 'platforms: iOS, Android, Web' },
+]
 
 const featureRows = [
   {
     tag: 'GAME-SPECIFIC SCORE SHEETS',
     title: 'A score sheet built for each game',
-    body: 'Every board game counts points differently. Cascadia scores wildlife cards and habitat corridors. Catan scores settlements, cities, and the longest road. Rummikub counts whatever is left in everyone’s rack. Instead of one generic scoreboard, YadaRank gives each game its own score sheet, so you enter the numbers you can actually see on the table and the totals add themselves up.',
-    visual: <ScoreSheetMock />,
+    body: 'Settlements, cities, longest road — enter what you see on the table and the totals add themselves up.',
+    visual: <Phone src="/screens/scoresheet.webp" alt="Catan score sheet in YadaRank with totals and the winner" />,
   },
   {
     tag: 'SKILL-BASED RANKINGS',
     title: 'A ranking that measures skill, not attendance',
-    body: 'Counting wins rewards whoever plays the most. YadaRank rates players with an Elo rating built for multiplayer games, so finishing first at a table of five strong players moves you more than beating one beginner. Your group gets its own standings, and there is an overall ranking across the whole app.',
-    visual: <RankingMock />,
+    body: 'Beating a table of strong players moves you more than beating one beginner. Every group gets its own standings.',
+    visual: <Phone src="/screens/ranking_list.webp" alt="Group ranking with podium and Elo scores" />,
     reversed: true,
   },
   {
     tag: 'COMMUNITIES AND GROUPS',
     title: 'Your club on top, a group for every game',
-    body: 'Start a community for your board game club, your meetup, or the friends who show up every week, then share the invite link. Inside it you add a group for each game you play. Every group carries its own score sheet and its own standings, so the Catan table and the Azul table keep separate records instead of blurring into one leaderboard.',
-    visual: <GroupMock />,
+    body: 'One invite link for the whole club. Catan and Dixit keep separate records instead of blurring into one leaderboard.',
+    visual: <Phone src="/screens/lobby.webp" alt="Community page with a group for each board game" />,
   },
 ]
 
@@ -359,25 +275,37 @@ export default function Home() {
       <Header />
 
       <main style={{ flex: 1 }}>
-        {/* 히어로 */}
+        {/* 히어로 — 좁은 화면은 문구 → 폰 순서로 쌓이고, 넓으면 좌우 2단 */}
         <section style={styles.hero}>
-          <div style={styles.appIcon}>
-            <img src="/logo.png" width="64" height="64" style={{ objectFit: 'contain' }} alt="YadaRank" />
+          <div className="hero-grid" style={styles.inner}>
+            <div className="hero-copy">
+              <span style={styles.eyebrow}>iOS · Android · Web</span>
+              <h1 style={styles.h1}>Board game score tracker for your group</h1>
+              <p className="hero-tagline" style={styles.tagline}>
+                A score sheet for each game, every match saved, and a ranking that settles
+                who&rsquo;s actually best.
+              </p>
+              <div className="hero-badges"><StoreBadges /></div>
+              <a href={WEB_APP_URL} target="_blank" rel="noopener noreferrer" style={styles.webLink}>
+                Or open it in your browser &rarr;
+              </a>
+            </div>
+            <div className="hero-phones">
+              <Phone src="/screens/scoresheet.webp" alt="Catan score sheet in YadaRank" className="phone-back" eager />
+              <Phone src="/screens/ranking_list.webp" alt="Group ranking in YadaRank" className="phone-front" eager />
+            </div>
           </div>
-          <div>
-            <span style={styles.eyebrow}>iOS · Android · Web</span>
-          </div>
-          <h1 style={styles.h1}>Board game score tracker for your group</h1>
-          <p style={styles.tagline}>
-            Keep score with a sheet built for the game you are playing, save every match,
-            and see skill-based rankings for your play group.
-          </p>
-          {/* 페이지 맨 아래 다운로드 섹션으로 내려간다. 순수 앵커라 JS 없이도 동작한다. */}
-          <a href="#get-app" className="hover-lift" style={styles.heroCta}>
-            Download the app
-            <DownIcon />
-          </a>
         </section>
+
+        {/* 신뢰 띠 */}
+        <div style={styles.trust}>
+          {trust.map((t) => (
+            <div key={t.label} style={styles.trustItem}>
+              <span style={styles.trustNum}>{t.num}</span>
+              <span style={styles.trustLabel}>{t.label}</span>
+            </div>
+          ))}
+        </div>
 
         {/* 문제 제기 — 첫 화면 하단에 제목이 걸치도록 위쪽 여백을 줄였다.
             아래에 내용이 더 있다는 걸 스크롤 전에 알리기 위한 것. */}
@@ -421,6 +349,14 @@ export default function Home() {
                 </div>
               </Reveal>
             ))}
+            <Reveal>
+              <div style={{ textAlign: 'center' }}>
+                <h2 style={{ ...styles.h2, fontSize: 'clamp(22px, 3vw, 28px)', marginBottom: '24px' }}>
+                  Try it at your next game night
+                </h2>
+                <StoreBadges />
+              </div>
+            </Reveal>
           </div>
         </section>
 
@@ -470,12 +406,13 @@ export default function Home() {
             <Reveal>
               <h2 style={{ ...styles.h2, marginBottom: '48px' }}>Questions groups ask</h2>
             </Reveal>
+            {/* 답변은 접혀 있어도 DOM에 그대로 있어서 크롤러가 읽는다 */}
             {faqs.map((f, i) => (
               <Reveal key={f.q} delay={Math.min(i, 4) * 70}>
-                <div style={styles.faqItem}>
-                  <div style={styles.faqQ}>{f.q}</div>
+                <details className="faq" style={styles.faqItem}>
+                  <summary>{f.q}</summary>
                   <div style={styles.faqA}>{f.a}</div>
-                </div>
+                </details>
               </Reveal>
             ))}
           </div>
@@ -491,32 +428,10 @@ export default function Home() {
                 results land in one place.
               </p>
               {/* 앱 우선. 웹은 마지막에 보조 수단으로 둔다. */}
-              <div style={styles.badges}>
-                <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer"
-                   className="hover-lift" style={{ ...styles.badge, background: PURPLE, color: '#fff' }}>
-                  <AppleIcon />
-                  <div>
-                    <span style={styles.badgeLabel}>Download on the</span>
-                    <span style={styles.badgeStore}>App Store</span>
-                  </div>
-                </a>
-                <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer"
-                   className="hover-lift" style={{ ...styles.badge, background: '#1a1a1a', color: '#fff' }}>
-                  <PlayIcon />
-                  <div>
-                    <span style={styles.badgeLabel}>Get it on</span>
-                    <span style={styles.badgeStore}>Google Play</span>
-                  </div>
-                </a>
-                <a href={WEB_APP_URL} target="_blank" rel="noopener noreferrer"
-                   className="hover-lift" style={{ ...styles.badge, background: '#fff', color: '#555', border: '1px solid #e0e0e0' }}>
-                  <WebIcon />
-                  <div>
-                    <span style={styles.badgeLabel}>Or open in</span>
-                    <span style={styles.badgeStore}>Browser</span>
-                  </div>
-                </a>
-              </div>
+              <StoreBadges />
+              <a href={WEB_APP_URL} target="_blank" rel="noopener noreferrer" style={styles.webLink}>
+                Or open it in your browser &rarr;
+              </a>
             </Reveal>
           </div>
         </section>
