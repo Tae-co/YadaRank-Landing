@@ -53,3 +53,60 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
   .hover-lift, .hover-lift:hover { transition: none; transform: none; }
 }
+
+/* 히어로: 모바일은 가운데 정렬 1열, 넓은 화면은 문구 왼쪽 + 폰 오른쪽 */
+.hero-grid { display: grid; grid-template-columns: 1fr; gap: 56px; align-items: center; text-align: center; }
+.hero-tagline { margin-left: auto; margin-right: auto; }
+
+@media (min-width: 900px) {
+  .hero-grid { grid-template-columns: 1.05fr 1fr; gap: 48px; text-align: left; }
+  .hero-tagline { margin-left: 0; }
+  .hero-badges > div { justify-content: flex-start !important; }
+}
+
+/* 앱 캡처를 감싸는 폰 프레임 */
+.phone {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 9px;
+  border-radius: 46px;
+  background: #16161d;
+  box-shadow: 0 30px 60px -20px rgba(43, 32, 140, 0.35), 0 0 0 1px rgba(0, 0, 0, 0.06);
+}
+.phone img { display: block; width: 100%; height: auto; border-radius: 37px; }
+
+/* 히어로의 폰 두 대: 앞은 랭킹, 뒤는 점수판을 살짝 기울여 겹친다 */
+.hero-phones { position: relative; display: flex; justify-content: center; padding: 0 0 8px; }
+.hero-phones .phone { max-width: 260px; }
+.hero-phones .phone-front { position: relative; z-index: 2; transform: translateX(18%); }
+.hero-phones .phone-back {
+  position: absolute; top: 34px; left: 50%; z-index: 1;
+  transform: translateX(-88%) rotate(-7deg);
+  opacity: 0.96;
+}
+
+@media (max-width: 480px) {
+  .hero-phones .phone { max-width: 200px; }
+  .hero-phones .phone-front { transform: translateX(14%); }
+  .hero-phones .phone-back { transform: translateX(-80%) rotate(-7deg); }
+}
+
+/* FAQ 아코디언 */
+.faq summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 22px 36px 22px 0;
+  font-size: 17px;
+  font-weight: 700;
+  position: relative;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: '+';
+  position: absolute; right: 4px; top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px; font-weight: 400; color: #6b5ce7;
+  transition: transform 0.2s ease;
+}
+.faq[open] summary::after { transform: translateY(-50%) rotate(45deg); }
