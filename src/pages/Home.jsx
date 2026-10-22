@@ -197,6 +197,10 @@ const faqs = [
     a: 'A community is the circle of people — your club, your meetup, your regular table — and it holds the invite link everyone joins through. A group sits inside a community and covers one board game. You can run as many groups as you play games, and each keeps its own score sheet and its own ranking. There is also an overall ranking across the whole app if you want to see where you land more broadly.',
   },
   {
+    q: 'Can I keep score for card games too?',
+    a: 'Yes. Uno, Rummikub, Dixit, and Saboteur have their own score sheets, and they work the same way as the board games: enter each round or final score, save the match, and the group leaderboard updates. Uno adds up round scores toward a target, and Rummikub totals the tiles left in each rack, jokers included.',
+  },
+  {
     q: 'Does this work for in-person games?',
     a: 'That is exactly what it is built for. YadaRank does not play the game for you and does not need the game to be digital. You play on a real table with real components, then record the result afterwards.',
   },
@@ -282,8 +286,8 @@ export default function Home() {
               <span style={styles.eyebrow}>iOS · Android · Web</span>
               <h1 style={styles.h1}>Board game score tracker for your group</h1>
               <p className="hero-tagline" style={styles.tagline}>
-                A score sheet for each game, every match saved, and a ranking that settles
-                who&rsquo;s actually best.
+                The score keeper app for board game groups: a sheet for each game, every
+                match saved, and a leaderboard that settles who&rsquo;s actually best.
               </p>
               <div className="hero-badges"><StoreBadges /></div>
               <a href={WEB_APP_URL} target="_blank" rel="noopener noreferrer" style={styles.webLink}>
