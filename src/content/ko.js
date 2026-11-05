@@ -114,5 +114,5 @@ export default {
   ctaTitle: '다음 모임 전에 결판을 내세요',
   ctaLead: '앱을 받고, 커뮤니티를 만들고, 초대 링크를 공유하세요. 우리 모임의 결과가 한곳에 모입니다.',
 
-  footer: { privacy: '개인정보처리방침', delete: '계정 삭제', switchLabel: 'English', switchHref: '/' },
+  footer: { privacy: '개인정보처리방침', delete: '계정 삭제' },
 }

@@ -113,5 +113,5 @@ export default {
   ctaTitle: 'Settle it before the next game night',
   ctaLead: 'Get the app, start a community, and share the invite link. Your group’s results land in one place.',
 
-  footer: { privacy: 'Privacy Policy', delete: 'Delete Account', switchLabel: '한국어', switchHref: '/ko' },
+  footer: { privacy: 'Privacy Policy', delete: 'Delete Account' },
 }
