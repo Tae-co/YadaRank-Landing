@@ -7,6 +7,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/ko" element={<Home lang="ko" />} />
       <Route path="/privacy" element={<Privacy />} />
       <Route path="/delete" element={<DeleteAccount />} />
     </Routes>
