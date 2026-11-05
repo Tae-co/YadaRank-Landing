@@ -192,7 +192,7 @@ export default function Home({ lang = 'en' }) {
 
   return (
     <div style={styles.body}>
-      <Header />
+      <Header lang={lang} />
 
       <main style={{ flex: 1 }}>
         {/* 히어로 — 좁은 화면은 문구 → 폰 순서로 쌓이고, 넓으면 좌우 2단 */}
