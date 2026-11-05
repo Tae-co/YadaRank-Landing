@@ -13,6 +13,14 @@ const SITE = 'https://yadarank.com'
 // sitemap·canonical에 적은 슬래시 없는 URL과 어긋난다. `privacy.html`이면 `/privacy`가 200이다.
 const pages = [
   { route: '/', file: 'index.html' },
+  // 네이버 검색용 한국어 홈. 네이버 서치어드바이저에는 이 URL과 sitemap을 등록한다.
+  {
+    route: '/ko',
+    file: 'ko.html',
+    lang: 'ko',
+    title: '보드게임 점수 기록 앱 · 보드게임 점수판과 랭킹 | YadaRank',
+    description: '보드게임 모임을 위한 점수 기록 앱. 카탄·아줄·스플렌더 등 17개 게임 전용 점수판으로 계산하고, 모든 판을 저장하고, Elo 랭킹으로 실력을 겨루세요. iOS·Android·웹.',
+  },
   {
     route: '/privacy',
     file: 'privacy.html',
@@ -35,8 +43,12 @@ const replaceAttr = (html, pattern, value) => {
   return html.replace(pattern, `$1${escapeAttr(value)}$2`)
 }
 
-function applyMeta(html, { title, description, url }) {
+function applyMeta(html, { title, description, url, lang }) {
   let out = html
+  if (lang === 'ko') {
+    out = replaceAttr(out, /(<html lang=")[^"]*(")/, 'ko')
+    out = replaceAttr(out, /(<meta property="og:locale" content=")[^"]*(")/, 'ko_KR')
+  }
   if (title) {
     out = out.replace(/<title>[\s\S]*?<\/title>/, `<title>${escapeAttr(title)}</title>`)
     out = replaceAttr(out, /(<meta property="og:title" content=")[^"]*(")/, title)

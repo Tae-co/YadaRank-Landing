@@ -8,6 +8,9 @@ body {
 }
 
 a { color: #6b5ce7; text-decoration: none; }
+
+/* 한국어는 단어 중간에서 줄이 끊기지 않게 한다 (/ko) */
+html[lang="ko"] body { word-break: keep-all; }
 a:hover { text-decoration: underline; }
 
 /* 히어로의 "Download the app"이 하단 #get-app으로 부드럽게 내려가게 한다. */
