@@ -39,7 +39,7 @@ export default {
     {
       tag: 'GAME-SPECIFIC SCORE SHEETS',
       title: 'A score sheet built for each game',
-      body: 'Settlements, cities, longest road — enter what you see on the table and the totals add themselves up.',
+      body: 'Settlements, cities, longest road — enter what you see on the table and the totals add themselves up. Playing something not on the list? Build your own sheet with your own scoring categories.',
       src: '/screens/scoresheet.webp',
       alt: 'Catan score sheet in YadaRank with totals and the winner',
     },
@@ -68,7 +68,7 @@ export default {
     'Saboteur', 'Radlands', 'Dice Throne', 'Unmatched', 'Duel for Middle-earth',
   ],
   gamesTitle: (n) => `Score sheets ready for ${n} games`,
-  gamesLead: 'Pick the game, fill in the sheet, save the match. More get added as groups ask for them.',
+  gamesLead: 'Pick the game, fill in the sheet, save the match. Missing a game? Make a custom sheet — category scores, ranks only, or win/draw/loss.',
 
   stepsTitle: 'How it works',
   stepsLead: 'Three steps, and none of them happen during the game.',
