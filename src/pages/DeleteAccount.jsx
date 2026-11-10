@@ -39,7 +39,7 @@ const steps = [
   { num: 'Step 1', text: 'Open the YadaRank app and log in' },
   { num: 'Step 2', text: 'Go to your Profile', sub: 'Tap the profile icon in the bottom navigation' },
   { num: 'Step 3', text: 'Tap "회원탈퇴" (Delete Account)', sub: 'Scroll to the bottom of the profile page' },
-  { num: 'Step 4', text: 'Confirm deletion', sub: 'Your account and all data will be permanently deleted' },
+  { num: 'Step 4', text: 'Confirm deletion', sub: 'Your account and personal data will be permanently deleted' },
 ]
 
 export default function DeleteAccount() {
@@ -48,7 +48,7 @@ export default function DeleteAccount() {
       <Header />
       <main style={styles.main}>
         <h1 style={styles.h1}>Delete Your Account</h1>
-        <p style={styles.subtitle}>You can delete your YadaRank account and all associated data at any time.</p>
+        <p style={styles.subtitle}>You can delete your YadaRank account and your personal data at any time.</p>
 
         <div style={styles.warningBox}>
           ⚠️ Account deletion is permanent and cannot be undone. All your data will be removed within 30 days.
@@ -81,9 +81,12 @@ export default function DeleteAccount() {
         <ul style={styles.ul}>
           <li style={styles.li}>Your name, email address, and profile picture</li>
           <li style={styles.li}>Your nickname and account information</li>
-          <li style={styles.li}>All game match records and ranking history</li>
-          <li style={styles.li}>All group room memberships</li>
+          <li style={styles.li}>Your scores and ranking history</li>
+          <li style={styles.li}>All group and community memberships</li>
         </ul>
+
+        <h2 style={styles.h2}>What stays (anonymized)</h2>
+        <p style={styles.p}>Rankings in a group are calculated from every game played together. To keep other players' scores unchanged, the results of games you played with others stay in their match history as an anonymous <strong>“Former member”</strong>. These records contain no name, email, nickname or profile picture and can't be linked back to you. The same applies when you leave a group or community.</p>
         <p style={styles.p}>Deletion is completed within <strong>30 days</strong> of your request.</p>
       </main>
       <Footer />

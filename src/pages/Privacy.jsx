@@ -17,7 +17,7 @@ export default function Privacy() {
       <Header />
       <main style={styles.main}>
         <h1 style={styles.h1}>Privacy Policy</h1>
-        <p style={styles.updated}>Last updated: May 2026</p>
+        <p style={styles.updated}>Last updated: November 2026</p>
 
         <p style={styles.p}>YadaRank ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.</p>
 
@@ -51,7 +51,7 @@ export default function Privacy() {
         </ul>
 
         <h2 style={styles.h2}>4. Data Retention</h2>
-        <p style={styles.p}>Your data is retained for as long as your account is active. You may request account deletion at any time by contacting us. Upon deletion, all personal information and associated game records will be permanently removed.</p>
+        <p style={styles.p}>Your data is retained for as long as your account is active. You may request account deletion at any time by contacting us. Upon deletion, all personal information (name, email, nickname, profile picture), your scores and your ranking history will be permanently removed. To keep other players' scores unchanged, the results of games you played with others remain in their match history as an anonymous “Former member” that contains no personal information and can't be linked back to you. The same applies when you leave a group or community.</p>
 
         <h2 style={styles.h2}>5. Data Security</h2>
         <p style={styles.p}>We take reasonable measures to protect your information. However, no method of transmission over the internet is 100% secure.</p>
